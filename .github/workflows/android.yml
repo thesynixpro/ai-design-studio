@@ -1,15 +1,10 @@
-
 name: Build AI Design Studio APK
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
   pull_request:
-    branches:
-      - main
-      - master
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -19,10 +14,16 @@ jobs:
   build:
     name: Build and Release APK
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+
+      - name: Verify project root
+        run: |
+          echo "Repository root: $GITHUB_WORKSPACE"
+          test -f settings.gradle || (echo "ERROR: settings.gradle must be in repository root" && find . -maxdepth 4 -name settings.gradle -print && exit 1)
+          test -f build.gradle
+          test -f app/build.gradle
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -43,8 +44,7 @@ jobs:
             platform-tools
 
       - name: Accept Android SDK Licenses
-        run: |
-          yes | sdkmanager --licenses || true
+        run: yes | sdkmanager --licenses || true
 
       - name: Install Android SDK Packages
         run: |
@@ -53,8 +53,7 @@ jobs:
           sdkmanager "platform-tools"
 
       - name: Build Debug APK
-        run: |
-          gradle --no-daemon clean :app:assembleDebug
+        run: gradle --no-daemon clean :app:assembleDebug
 
       - name: Verify APK
         run: |
@@ -83,7 +82,6 @@ jobs:
             - Build: #${{ github.run_number }}
             - Commit: ${{ github.sha }}
             - Branch: ${{ github.ref_name }}
-
           files: app/build/outputs/apk/debug/app-debug.apk
           fail_on_unmatched_files: true
           draft: false
