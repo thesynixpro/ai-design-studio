@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Design"
+            android:textColor="@color/light_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Name"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/light_text" />
+
+        <EditText
+            android:id="@+id/project_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="My Awesome Project"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/light_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Design Type"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/light_text" />
+
+        <Spinner
+            android:id="@+id/design_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prompt"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/light_text" />
+
+        <EditText
+            android:id="@+id/prompt_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="Describe your UI design..."
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/light_text" />
+
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Generate Design" />
+    </LinearLayout>
+
+</ScrollView>
