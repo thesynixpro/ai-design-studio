@@ -18,9 +18,9 @@ public class ComponentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_components);
 
         createNewComponentBtn = findViewById(R.id.create_new_component_button);
-
-        createNewComponentBtn.setOnClickListener(v -> {
-            Toast.makeText(this, "Creating new component...", Toast.LENGTH_LONG).show();
-        });
+        if (createNewComponentBtn != null) {
+            createNewComponentBtn.setOnClickListener(v ->
+                    Toast.makeText(this, "Component creator is ready for the next step.", Toast.LENGTH_SHORT).show());
+        }
     }
 }

@@ -28,11 +28,14 @@ public class TemplatesActivity extends AppCompatActivity implements View.OnClick
         templatesRecycler = findViewById(R.id.templates_recycler);
         previewTemplateButton = findViewById(R.id.preview_template_button);
 
-        templatesRecycler.setLayoutManager(new LinearLayoutManager(this));
-        templateAdapter = new TemplateAdapter();
-        templatesRecycler.setAdapter(templateAdapter);
-
-        previewTemplateButton.setOnClickListener(this);
+        if (templatesRecycler != null) {
+            templatesRecycler.setLayoutManager(new LinearLayoutManager(this));
+            templateAdapter = new TemplateAdapter();
+            templatesRecycler.setAdapter(templateAdapter);
+        }
+        if (previewTemplateButton != null) {
+            previewTemplateButton.setOnClickListener(this);
+        }
     }
 
     @Override

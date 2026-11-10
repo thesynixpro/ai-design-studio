@@ -49,20 +49,21 @@ public class CreateDesignActivity extends AppCompatActivity implements View.OnCl
             android.R.layout.simple_spinner_dropdown_item, designTypes);
         designTypeSpinner.setAdapter(adapter);
 
-        generateButton.setOnClickListener(this);
-        fabBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        if (generateButton != null) {
+            generateButton.setOnClickListener(this);
+        }
+        // The back control is optional so older layouts cannot crash the screen.
+        if (fabBack != null) {
+            fabBack.setOnClickListener(v -> finish());
+        }
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.generate_button) {
             String projectName = projectNameInput.getText().toString().trim();
-            String designType = designTypeSpinner.getSelectedItem().toString();
+            String designType = designTypeSpinner != null && designTypeSpinner.getSelectedItem() != null
+                    ? designTypeSpinner.getSelectedItem().toString() : "Custom Interface";
             String prompt = promptInput.getText().toString().trim();
 
             if (projectName.isEmpty() || prompt.isEmpty()) {
