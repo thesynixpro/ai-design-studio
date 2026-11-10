@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item android:id="@+id/action_create" android:title="Create"/>
+ <item android:id="@+id/action_projects" android:title="Projects"/>
+ <item android:id="@+id/action_templates" android:title="Templates"/>
+ <item android:id="@+id/action_components" android:title="Components"/>
+ <item android:id="@+id/action_design_systems" android:title="Design systems"/>
+ <item android:id="@+id/action_ai_settings" android:title="AI settings"/>
+ <item android:id="@+id/action_app_settings" android:title="App settings"/>
+</menu>
