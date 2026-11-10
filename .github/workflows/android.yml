@@ -3,9 +3,9 @@ name: Build AI Design Studio APK
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: [main, master]
   pull_request:
-    branches: ["main", "master"]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: Build debug APK
+    name: Build Debug APK
     runs-on: ubuntu-latest
 
     steps:
@@ -35,21 +35,29 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: 14742923
-          accept-android-sdk-licenses: true
-          packages: |
-            platform-tools
-            platforms;android-34
-            build-tools;34.0.0
+          accept-android-sdk-licenses: false
+          packages: ''
+
+      - name: Accept Android SDK licenses
+        run: |
+          yes | sdkmanager --licenses
+
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager --install \
+            "platform-tools" \
+            "platforms;android-34" \
+            "build-tools;34.0.0"
 
       - name: Verify Android SDK
         run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
           sdkmanager --list_installed
 
-      - name: Build debug APK
-        run: gradle --no-daemon clean :app:assembleDebug
+      - name: Build Debug APK
+        run: |
+          gradle --no-daemon clean :app:assembleDebug
 
-      - name: Upload APK artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: AI-Design-Studio-debug-apk
