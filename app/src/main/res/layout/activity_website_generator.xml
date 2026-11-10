@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Website Generator"
+            android:textColor="@color/light_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/website_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Website Name"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/light_text" />
+
+        <EditText
+            android:id="@+id/website_prompt_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="Describe your website design..."
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/light_text" />
+
+        <Button
+            android:id="@+id/generate_website_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Generate Website" />
+
+        <Button
+            android:id="@+id/fab_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:text="Back" />
+    </LinearLayout>
+
+</ScrollView>
