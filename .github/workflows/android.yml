@@ -37,16 +37,19 @@ jobs:
         with:
           gradle-version: '8.7'
 
+     
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK 34
-        run: |
-          sdkmanager "platforms;android-34" "build-tools;34.0.0"
-          yes | sdkmanager --licenses
+        with:
+          accept-android-sdk-licenses: true
+          packages: |
+            platforms;android-34
+            build-tools;34.0.0
+            platform-tools
 
       - name: Build Debug APK
         run: gradle --no-daemon clean :app:assembleDebug
+
 
       - name: Verify APK
         run: |
