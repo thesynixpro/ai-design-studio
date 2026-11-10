@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Design Studio</string>
+    <string name="app_version">1.0.0</string>
+    <string name="design_type_website">Website UI</string>
+    <string name="design_type_mobile_app">Mobile App UI</string>
+    <string name="design_type_ios_app">iOS-style App UI</string>
+    <string name="design_type_saas_dashboard">SaaS Dashboard</string>
+    <string name="design_type_landing_page">Landing Page</string>
+    <string name="design_type_admin_dashboard">Admin Dashboard</string>
+    <string name="design_type_ecommerce">E-commerce Interface</string>
+    <string name="design_type_portfolio">Portfolio Website</string>
+    <string name="design_type_streaming">Streaming Platform</string>
+    <string name="design_type_custom">Custom Interface</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="generate">Generate Design</string>
+    <string name="projects">My Projects</string>
+    <string name="templates">Templates</string>
+    <string name="components">Components</string>
+    <string name="design_systems">Design Systems</string>
+    <string name="ai_settings">AI Settings</string>
+    <string name="app_settings">App Settings</string>
+    <string name="api_settings">API Settings</string>
+    <string name="model_selector">Model Selector</string>
+    <string name="free_tier_models">Free Tier Models</string>
+    <string name="validate">Validate</string>
+    <string name="test_connection">Test Connection</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="fetch_models">Fetch Models</string>
+    <string name="preview">Preview</string>
+    <string name="export_code">Export Code</string>
+    <string name="export_zip">Export ZIP</string>
+    <string name="delete">Delete</string>
+    <string name="duplicate">Duplicate</string>
+    <string name="edit">Edit</string>
+    <string name="close">Close</string>
+    <string name="search">Search</string>
+</resources>
