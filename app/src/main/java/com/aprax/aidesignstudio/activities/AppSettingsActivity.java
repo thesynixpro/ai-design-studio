@@ -1,0 +1,3 @@
+package com.aprax.aidesignstudio.activities;
+import android.os.Bundle; import android.widget.Button; import android.widget.Toast; import androidx.appcompat.app.AppCompatActivity; import com.aprax.aidesignstudio.R;
+public class AppSettingsActivity extends AppCompatActivity { protected void onCreate(Bundle b){super.onCreate(b);setContentView(R.layout.activity_app_settings); Button refresh=findViewById(R.id.refresh_models_button); if(refresh!=null)refresh.setOnClickListener(v->Toast.makeText(this,"Refreshing models...",Toast.LENGTH_SHORT).show());}}
